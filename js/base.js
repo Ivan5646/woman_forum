@@ -57,5 +57,20 @@ $(document).ready(function(){
 	$('#close2RurForm').on('click', function() {
 		$('#formOverlay2').fadeOut();
 		$('#payment2FormRUR').fadeOut();
-	})
+    })
+    
+    // speakers hover
+    if ($(window).width() < 768) {
+		$('.speakers__item').on('click', function () {
+			$('.speakers__hover').removeClass('active');
+			$(this).find('.speakers__hover').addClass('active');
+		});
+	}
+	else {
+		$('.speakers__item').hover(function () {
+			$(this).find('.speakers__hover').addClass('active');
+		}, function () {
+			$(this).find('.speakers__hover').removeClass('active');
+		});
+	}
 })

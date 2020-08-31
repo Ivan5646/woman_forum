@@ -1,0 +1,117 @@
+.speakers {
+    padding-bottom: 70px;
+
+    &__title {
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 10px;
+    }
+    &__item {
+        width: 360px;
+        height: 467px;
+        overflow: hidden;
+        margin: 0 30px 15px 0;
+        z-index: 50;
+        position: relative;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &--bg {
+            background-position: -280px 0;
+        }
+    }
+    &__hover {
+        transition: 1s;
+        position: relative;
+        top: 268px;
+        height: 660px;
+        background: url(../img/hover.png) top;
+    }
+    &__name {
+        transition: 1s;
+        color: #FFEC00;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 29px;
+        padding-top: 68px;
+        margin-left: 20px;
+    }
+    &__about {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        padding-top: 10px;
+        padding-left: 26px;
+        margin-left: 20px;
+        color: #ffffff;
+        background-image: url("../img/inst-icon.png");
+        background-repeat: no-repeat;
+        background-position: 0 10px;
+        background-size: 20px;
+    }
+    &__description {
+        transition: 1s;
+        padding-top: 74px;
+        padding-left: 20px;
+        padding-right: 20px;
+        opacity: 0.77;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+.active {
+    transition: 1s;
+    top: -62px;
+    padding-top: 30px;
+}
+
+
+/*ADAPTIVE*/
+
+@media @tablet {
+    .speakers {
+        &__item {
+            width: 300px;
+            margin-right: 10px;
+            &:nth-child(3n) {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 770px) {
+    .speakers {
+        &__item {
+            width: 48%;
+            margin: 7px;
+            &:nth-child(3n) {
+                margin-right: 7px;
+            }
+        }
+    }
+}
+@media @phone {
+    .speakers {
+        &__item {
+            width: 100%;
+            margin-right: 0;
+            &:nth-child(3n) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
