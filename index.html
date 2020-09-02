@@ -1,4 +1,6 @@
-{% set item = data['items']['woman_forum']['products'][0] %}
+{% set item = data['items']['merchant-netizens']['products'][0] %}
+{% set ticket1 = data['items']['merchant-netizens']['ticket1'] %}
+{% set ticket2 = data['items']['merchant-netizens']['ticket2'] %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -238,7 +240,7 @@
 				<div class="payment" id="paymentBlock">
 					<div class="payment__header">
 							<span class="payment__text">Стоимость пакета Стандарт:</span>
-							<span class="payment__amount">{{item['price']}} ₽</span>
+							<span class="payment__amount">{{ticket1['price']}} ₽</span>
 						</div>
 						<div class="payment__inner">
 							<div class="payment__btns-wrap">
@@ -259,7 +261,7 @@
 
 					<div class="payment__header">
 						<span class="payment__text">Стоимость пакета VIP:</span>
-						<span class="payment__amount">{{item['price']}} ₽</span>
+						<span class="payment__amount">{{ticket2['price']}} ₽</span>
 					</div>
 
 					{% if lead_promo %}
@@ -292,12 +294,13 @@
 		</div>
 
 		<!-- GOODS BLOCK ! IMPORTANT-->
-		<input type="hidden" name="item_number" id="{{item['code']}}" class="items_quantity" value=1 min=1 disabled
-			data-price="{{item['price']}}" data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
-			data-image="{{item['image']}}">
+		<input type="hidden" name="item_number" id="{{ticket1['code']}}" class="items_quantity" value=1 min=1 disabled
+			data-price="{{ticket1['price']}}" data-old_price="{{ticket1['old_price']}}" data-name="{{ticket1['name']}}"
+			data-image="{{ticket1['image']}}">
 
-		<input type="hidden" name="item_number" id="annafoody12_ticket" class="items_quantity2" value=1 min=1 disabled
-			data-price="6600" data-old_price="6600" data-name="{{item['name']}}" data-image="{{item['image']}}">
+		<input type="hidden" name="item_number" id="{{ticket2['code']}}" class="items_quantity2" value=1 min=1 disabled
+			data-price="{{ticket2['price']}}" data-old_price="{{ticket2['old_price']}}" data-name="{{ticket2['name']}}" 
+			data-image="{{ticket2['image']}}">
 		<!-- GOODS BLOCK ! IMPORTANT-->
 
 		<!-- POLICY BLOCK -->
